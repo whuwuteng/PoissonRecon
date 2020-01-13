@@ -9,6 +9,14 @@
 -->
 </center>
 <hr>
+This code is origin from standard Poisson Surface Reconstruction. Inorder to run in Unbuntu(16.04), a CMakeLists.txt is provide.
+<UL>
+<LI> Install libPng. sudo apt-get install libpng-dev.
+<LI> Install libJpeg. sudo apt-get install libjpeg-dev.
+<LI> Install libZip. sudo apt-get install zlib1g-dev.
+</UL>
+<hr>
+<hr>
 This code-base was born from the Poisson Surface Reconstruction code. It has evolved to support more general adaptive finite-elements systems:
 <UL>
 <LI> in spaces of arbitrary dimension,
