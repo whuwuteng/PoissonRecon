@@ -5,6 +5,7 @@
 #include "PNG/png.h"
 #else // !_WIN32
 #include <png.h>
+#include <zlib.h>
 #endif // _WIN32
 
 struct PNGReader : public ImageReader
@@ -16,7 +17,7 @@ struct PNGReader : public ImageReader
 protected:
 	png_structp _png_ptr;
 	png_infop _info_ptr;
-	png_infop _end_info ;
+	png_infop _end_info;
 	FILE* _fp;
 	unsigned char* _scratchRow;
 	unsigned int _currentRow;
@@ -32,6 +33,7 @@ protected:
 	FILE* _fp;
 	png_structp _png_ptr;
 	png_infop _info_ptr;
+	unsigned int _width;
 	unsigned int _currentRow;
 };
 

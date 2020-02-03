@@ -4,6 +4,7 @@
 #include "PNG/png.h"
 #else // !_WIN32
 #include <png.h>
+#include <zlib.h>
 #endif // _WIN32
 
 inline PNGReader::PNGReader( const char* fileName , unsigned int& width , unsigned int& height , unsigned int& channels )
@@ -124,6 +125,7 @@ PNGWriter::PNGWriter( const char* fileName , unsigned int width , unsigned int h
 	};
 	png_set_IHDR( _png_ptr , _info_ptr, width , height, 8 , pngColorType , PNG_INTERLACE_NONE , PNG_COMPRESSION_TYPE_DEFAULT , PNG_FILTER_TYPE_DEFAULT );
 	png_write_info( _png_ptr , _info_ptr );
+	_width  = width;
 
 	{
 		long int a = 1;
@@ -144,6 +146,10 @@ unsigned int PNGWriter::nextRow( const unsigned char* row )
 }
 unsigned int PNGWriter::nextRows( const unsigned char* rows , unsigned int rowNum )
 {
-	for( unsigned int r=0 ; r<rowNum ; r++ ) png_write_row( _png_ptr , (png_bytep)( rows + r * 3 * sizeof( unsigned char ) * _png_ptr->width ) );
+	// for old libpng
+	//for( unsigned int r=0 ; r<rowNum ; r++ ) png_write_row( _png_ptr , (png_bytep)( rows + r * 3 * sizeof( unsigned char ) * _png_ptr->width ) );
+	
+	// for libpng16
+	for( unsigned int r=0 ; r<rowNum ; r++ ) png_write_row( _png_ptr , (png_bytep)( rows + r * 3 * sizeof( unsigned char ) * _width ) );
 	return _currentRow += rowNum;
 }
