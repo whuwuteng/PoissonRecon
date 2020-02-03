@@ -9,11 +9,11 @@
 -->
 </center>
 <hr>
-This code is origin from standard Poisson Surface Reconstruction. Inorder to run in Unbuntu(16.04), a CMakeLists.txt is provide.
+This code is origin from standard Poisson Surface Reconstruction. Inorder to run in Unbuntu(16.04) and Ubuntu(18.04), a CMakeLists.txt is provide.
 <UL>
-<LI> Install libPng. sudo apt-get install libpng-dev.
+<LI> Install libPng. sudo apt-get install libpng-dev. Support libpng16.
 <LI> Install libJpeg. sudo apt-get install libjpeg-dev.
-<LI> Install libZip. sudo apt-get install zlib1g-dev.
+<LI> Install libZip. sudo apt-get install zlib1g-dev. 
 </UL>
 <hr>
 <center><h2>CMakeLists for Ubuntu 16.04</h2></center>
