@@ -16,7 +16,7 @@ This code is origin from standard Poisson Surface Reconstruction. Inorder to run
 <LI> Install libZip. sudo apt-get install zlib1g-dev. 
 </UL>
 <hr>
-<center><h2>CMakeLists for Ubuntu 16.04</h2></center>
+<center><h2>CMakeLists for Ubuntu 16.04 & 18.04</h2></center>
 <UL>
 <LI> mkdir build
 <LI> cd build
